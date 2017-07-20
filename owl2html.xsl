@@ -155,15 +155,14 @@
         </a>
     </xsl:template>
     
-    <xsl:template match="comment()">
-        <xsl:if test="contains(., '///')">
-            <li>
-                <xsl:analyze-string select="." regex="[/\s]+([\w ]+)[/\s]+">
-                    <xsl:matching-substring>
-                        <xsl:value-of select="regex-group(1)"/>
-                    </xsl:matching-substring>
-                </xsl:analyze-string>
-            </li>
-        </xsl:if>
+    <xsl:template match="text()">
+        <xsl:analyze-string select="." regex="(http[^\s\)]*)">
+            <xsl:matching-substring>
+                <a href="{.}">Link</a>
+            </xsl:matching-substring>
+            <xsl:non-matching-substring>
+                <xsl:value-of select="." />
+            </xsl:non-matching-substring>
+        </xsl:analyze-string>
     </xsl:template>
 </xsl:stylesheet> 
