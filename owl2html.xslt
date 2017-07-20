@@ -11,6 +11,10 @@
    
    <xsl:template match="/">
       <html>
+         <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+            <title><xsl:value-of select="rdf:RDF/owl:Ontology/dct:title"/></title>
+         </head>
          <body>
             <h1><xsl:value-of select="rdf:RDF/owl:Ontology/dct:title"/></h1>
             <h2>OWL ontology</h2>
