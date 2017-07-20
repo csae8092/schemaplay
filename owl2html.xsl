@@ -17,7 +17,7 @@
                 <style>
                     body {
                         padding-left: 10%;
-                        padding-right: 10;
+                        padding-right: 10%;
                     }
                     .list {
                         border: 1px solid;
