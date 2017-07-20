@@ -15,6 +15,15 @@
         <html>
             <head>
                 <style>
+                    body {
+                        padding-left: 10%;
+                        padding-right: 10;
+                    }
+                    .list {
+                        border: 1px solid;
+                        background-color: grey;
+                        padding: 1em;
+                    }
                     .entry {
                         border: 1px solid;
                         padding: 1em;
