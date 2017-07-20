@@ -1,0 +1,1322 @@
+<html xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+                    .entry {
+                        border: 1px solid;
+                        padding: 1em;
+                        background-color: lightgrey;
+                    }
+                    h3 {
+                        background-color: white;
+                    }
+                </style><title>OWL</title>
+   </head>
+   <body>
+      <h1>https://vocabs.acdh.oeaw.ac.at/acdh</h1>
+      <div>
+         <h2>Status</h2>
+         <p>2017-04-06 - added cardinality and some test description, Martina</p>
+         <p>changed namespace, Matej</p>
+         <p>2016-07-26 - removed imports, Matej</p>
+         <p>Version 0.1. First created on 2016-07-19 by Go</p>
+         <p>2017-06-14 removed and renamed some Digital/Non-Digital classes.
+            DigitalResource -&gt; Resource
+            DigitalCollection -&gt; Collection
+            DigitalProject -&gt; removed
+            rearranged the class hierarchy
+         </p>
+      </div>
+      <div class="list">
+         <p>Classes:
+            <a href="#Agent">Agent</a> | <a href="#Collection">Collection</a> | <a href="#Concept">Concept</a> | <a href="#Organization">Organization</a> | <a href="#Person">Person</a> | <a href="#Place">Place</a> | <a href="#Project">Project</a> | <a href="#Resource">Resource</a> |  |  |  | 
+         </p>
+         <p>Datatype properties:
+            <a href="#hasArrangement">has arrangement</a> | <a href="#hasCharacterEncoding">has character encoding</a> | <a href="#hasCompleteness">has completeness</a> | <a href="#hasCreationDate">has creation date</a> | <a href="#hasDate">has date</a> | <a href="#hasDescription">has description</a> | <a href="#hasEditorialPractice">has editorial practice</a> | <a href="#hasEndDate">has end date</a> | <a href="#hasEndpoint">has endpoint</a> | <a href="#hasIdentifier">has identifier</a> | <a href="#hasLocationPath">has location path</a> | <a href="#hasLocationUrl">has location URL</a> | <a href="#hasNamingScheme">has naming scheme</a> | <a href="#hasNote">has note</a> | <a href="#hasPid">has pid</a> | <a href="#hasStartDate">has start date</a> | <a href="#hasSubmissionDate">has submission date</a> | <a href="#hasTitle">has title</a> | <a href="#hasTransferDate">has transfer date</a> | <a href="#hasVersion">has version</a></p>
+         <p>Object properties:
+            <a href="#authored">authored</a> | <a href="#categorized">categorized</a> | <a href="#contributed">contributed</a> | <a href="#cooperated">cooperated</a> | <a href="#covered">covered</a> | <a href="#created">created</a> | <a href="#createdMetadata">created metadata</a> | <a href="#deposited">deposited</a> | <a href="#edited">edited</a> | <a href="#followed">followed</a> | <a href="#funded">funded</a> | <a href="#hasAccessRestriction">has access restriction</a> | <a href="#hasActor">has actor</a> | <a href="#hasAuthor">has author</a> | <a href="#hasCategory">has category</a> | <a href="#hasContact">has contact</a> | <a href="#hasContributor">has contributor</a> | <a href="#hasCoverage">has coverage</a> | <a href="#hasCreator">has creator</a> | <a href="#hasDepositor">has depositor</a> | <a href="#hasDerivedPublication">has derived publication</a> | <a href="#hasEditor">has editor</a> | <a href="#hasFormat">has format</a> | <a href="#hasFunder">has funder</a> | <a href="#hasLicense">has license</a> | <a href="#hasLicensor">has licensor</a> | <a href="#hasLifeCycleStatus">has life cycle status</a> | <a href="#hasLogo">has logo</a> | <a href="#hasMetadataCreator">has metadata creator</a> | <a href="#hasOwner">has owner</a> | <a href="#hasPart">has part</a> | <a href="#hasPreserver">has preserver</a> | <a href="#hasPrincipalInvestigator">has principal investigator</a> | <a href="#hasRelatedDiscipline">has related discipline</a> | <a href="#hasRelatedHardware">has related hardware</a> | <a href="#hasRelatedMethod">has related method</a> | <a href="#hasRelatedSoftware">has related software</a> | <a href="#hasRightsHolder">has rights holder</a> | <a href="#hasSchema">has schema</a> | <a href="#hasSource">has source</a> | <a href="#hasSpatialCoverage">has spatial coverage</a> | <a href="#hasSubject">has subject</a> | <a href="#hasTemporalCoverage">has temporal coverage</a> | <a href="#hasTitleImage">has title image</a> | <a href="#hasTransferMethod">has transfer method</a> | <a href="#isActor">is actor</a> | <a href="#isContact">is contact</a> | <a href="#isDerivedPublication">is derived publication</a> | <a href="#isFormat">is format</a> | <a href="#isLicensor">is licensor</a> | <a href="#isLifeCycleStatusOf">is lifecycle status of</a> | <a href="#isLogo">is logo</a> | <a href="#isPartOf">is part of</a> | <a href="#isPrincipalInvestigator">is principal investigator</a> | <a href="#isRelatedDisciplineOf">is related discipline of</a> | <a href="#isRelatedHardware">is related hardware</a> | <a href="#isRelatedMethod">is related method</a> | <a href="#isRelatedSoftware">is related software</a> | <a href="#isRightsHolder">is rights holder</a> | <a href="#isSchemaOf">is schema of</a> | <a href="#isSourceOf">is source of</a> | <a href="#isSubjectOf">is subject of</a> | <a href="#isTitleImageOf">is title image of</a> | <a href="#isTransferMethod">is transfer method</a> | <a href="#licensed">licensed</a> | <a href="#owned">owned</a> | <a href="#preceded">preceded</a> | <a href="#preserved">preserved</a> | <a href="#relation">relation</a> | <a href="#restrictedAccess">restricted access</a> | <a href="#spatiallyCovered">spatially covered</a> | <a href="#temporallyCovered">temporally covered</a> | <a href="#version">version</a></p>
+      </div>
+      <div>
+         <h2>Class</h2>
+         <div id="Agent" class="entry">
+            <h3>Class: acdh:Agent</h3>
+            <p>Agent: Agent</p>
+            <table>
+               <tr>
+                  <td class="he">equivalentClass</td>
+                  <td><a href="http://xmlns.com/foaf/0.1/Agent">Agent</a></td>
+               </tr>
+               <tr>
+                  <td class="he">subClassOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#Thing">owl#Thing</a></td>
+               </tr>
+               <tr>
+                  <td class="he">Has Subclass</td>
+                  <td><a href="#Organization">Organization</a> | <a href="#Person">Person</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="Collection" class="entry">
+            <h3>Class: acdh:Collection</h3>
+            <p>Collection: Collection</p>
+            <table>
+               <tr>
+                  <td class="he">subClassOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#Thing">owl#Thing</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="Concept" class="entry">
+            <h3>Class: acdh:Concept</h3>
+            <p>Concept: Concept</p>
+            <table>
+               <tr>
+                  <td class="he">subClassOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#Thing">owl#Thing</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="Organization" class="entry">
+            <h3>Class: acdh:Organization</h3>
+            <p>Organization: Organization</p>
+            <table>
+               <tr>
+                  <td class="he">equivalentClass</td>
+                  <td><a href="http://xmlns.com/foaf/0.1/Organization">Organization</a></td>
+               </tr>
+               <tr>
+                  <td class="he">subClassOf</td>
+                  <td><a href="#Agent">acdh:Agent</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="Person" class="entry">
+            <h3>Class: acdh:Person</h3>
+            <p>Person: Person</p>
+            <table>
+               <tr>
+                  <td class="he">equivalentClass</td>
+                  <td><a href="http://xmlns.com/foaf/0.1/Person">Person</a></td>
+               </tr>
+               <tr>
+                  <td class="he">subClassOf</td>
+                  <td><a href="#Agent">acdh:Agent</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="Place" class="entry">
+            <h3>Class: acdh:Place</h3>
+            <p>Place: Place</p>
+            <table>
+               <tr>
+                  <td class="he">subClassOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#Thing">owl#Thing</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="Project" class="entry">
+            <h3>Class: acdh:Project</h3>
+            <p>Project: Project</p>
+            <table>
+               <tr>
+                  <td class="he">equivalentClass</td>
+                  <td><a href="http://xmlns.com/foaf/0.1/Project">Project</a></td>
+               </tr>
+               <tr>
+                  <td class="he">subClassOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#Thing">owl#Thing</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="Resource" class="entry">
+            <h3>Class: acdh:Resource</h3>
+            <p>Resource: Resource</p>
+            <table>
+               <tr>
+                  <td class="he">subClassOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#Thing">owl#Thing</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="//xmlns.com/foaf/0.1/Agent" class="entry">
+            <h3>Class: http://xmlns.com/foaf/0.1/Agent</h3>
+            <p>//xmlns.com/foaf/0.1/Agent: </p>
+         </div>
+         <div id="//xmlns.com/foaf/0.1/Organization" class="entry">
+            <h3>Class: http://xmlns.com/foaf/0.1/Organization</h3>
+            <p>//xmlns.com/foaf/0.1/Organization: </p>
+            <table>
+               <tr>
+                  <td class="he">subClassOf</td>
+                  <td><a href="http://xmlns.com/foaf/0.1/Agent">Agent</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="//xmlns.com/foaf/0.1/Person" class="entry">
+            <h3>Class: http://xmlns.com/foaf/0.1/Person</h3>
+            <p>//xmlns.com/foaf/0.1/Person: </p>
+            <table>
+               <tr>
+                  <td class="he">subClassOf</td>
+                  <td><a href="http://xmlns.com/foaf/0.1/Agent">Agent</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="//xmlns.com/foaf/0.1/Project" class="entry">
+            <h3>Class: http://xmlns.com/foaf/0.1/Project</h3>
+            <p>//xmlns.com/foaf/0.1/Project: </p>
+         </div>
+      </div>
+      <div>
+         <h2>ObjectProperty</h2>
+         <div id="authored" class="entry">
+            <h3>ObjectProperty: acdh:authored</h3>
+            <p>authored: authored</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#hasAuthor">acdh:hasAuthor</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="categorized" class="entry">
+            <h3>ObjectProperty: acdh:categorized</h3>
+            <p>categorized: categorized</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#hasCategory">acdh:hasCategory</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="contributed" class="entry">
+            <h3>ObjectProperty: acdh:contributed</h3>
+            <p>contributed: contributed</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#hasContributor">acdh:hasContributor</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="cooperated" class="entry">
+            <h3>ObjectProperty: acdh:cooperated</h3>
+            <p>cooperated: cooperated</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="covered" class="entry">
+            <h3>ObjectProperty: acdh:covered</h3>
+            <p>covered: covered</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#hasCoverage">acdh:hasCoverage</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="created" class="entry">
+            <h3>ObjectProperty: acdh:created</h3>
+            <p>created: created</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#hasCreator">acdh:hasCreator</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="createdMetadata" class="entry">
+            <h3>ObjectProperty: acdh:createdMetadata</h3>
+            <p>createdMetadata: created metadata</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#hasMetadataCreator">acdh:hasMetadataCreator</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="deposited" class="entry">
+            <h3>ObjectProperty: acdh:deposited</h3>
+            <p>deposited: deposited</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#hasDepositor">acdh:hasDepositor</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="edited" class="entry">
+            <h3>ObjectProperty: acdh:edited</h3>
+            <p>edited: edited</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#hasEditor">acdh:hasEditor</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="followed" class="entry">
+            <h3>ObjectProperty: acdh:followed</h3>
+            <p>followed: followed</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#preceded">acdh:preceded</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="funded" class="entry">
+            <h3>ObjectProperty: acdh:funded</h3>
+            <p>funded: funded</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#hasFunder">acdh:hasFunder</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasAccessRestriction" class="entry">
+            <h3>ObjectProperty: acdh:hasAccessRestriction</h3>
+            <p>hasAccessRestriction: has access restriction</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#restrictedAccess">acdh:restrictedAccess</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasActor" class="entry">
+            <h3>ObjectProperty: acdh:hasActor</h3>
+            <p>hasActor: has actor</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isActor">acdh:isActor</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasAuthor" class="entry">
+            <h3>ObjectProperty: acdh:hasAuthor</h3>
+            <p>hasAuthor: has author</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasCategory" class="entry">
+            <h3>ObjectProperty: acdh:hasCategory</h3>
+            <p>hasCategory: has category</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasContact" class="entry">
+            <h3>ObjectProperty: acdh:hasContact</h3>
+            <p>hasContact: has contact</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isContact">acdh:isContact</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasContributor" class="entry">
+            <h3>ObjectProperty: acdh:hasContributor</h3>
+            <p>hasContributor: has contributor</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasCoverage" class="entry">
+            <h3>ObjectProperty: acdh:hasCoverage</h3>
+            <p>hasCoverage: has coverage</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasCreator" class="entry">
+            <h3>ObjectProperty: acdh:hasCreator</h3>
+            <p>hasCreator: has creator</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasDepositor" class="entry">
+            <h3>ObjectProperty: acdh:hasDepositor</h3>
+            <p>hasDepositor: has depositor</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasDerivedPublication" class="entry">
+            <h3>ObjectProperty: acdh:hasDerivedPublication</h3>
+            <p>hasDerivedPublication: has derived publication</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isDerivedPublication">acdh:isDerivedPublication</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasEditor" class="entry">
+            <h3>ObjectProperty: acdh:hasEditor</h3>
+            <p>hasEditor: has editor</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasFormat" class="entry">
+            <h3>ObjectProperty: acdh:hasFormat</h3>
+            <p>hasFormat: has format</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isFormat">acdh:isFormat</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasFunder" class="entry">
+            <h3>ObjectProperty: acdh:hasFunder</h3>
+            <p>hasFunder: has funder</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasLicense" class="entry">
+            <h3>ObjectProperty: acdh:hasLicense</h3>
+            <p>hasLicense: has license</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#licensed">acdh:licensed</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasLicensor" class="entry">
+            <h3>ObjectProperty: acdh:hasLicensor</h3>
+            <p>hasLicensor: has licensor</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isLicensor">acdh:isLicensor</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasLifeCycleStatus" class="entry">
+            <h3>ObjectProperty: acdh:hasLifeCycleStatus</h3>
+            <p>hasLifeCycleStatus: has life cycle status</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isLifeCycleStatusOf">acdh:isLifeCycleStatusOf</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasLogo" class="entry">
+            <h3>ObjectProperty: acdh:hasLogo</h3>
+            <p>hasLogo: has logo</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isLogo">acdh:isLogo</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasMetadataCreator" class="entry">
+            <h3>ObjectProperty: acdh:hasMetadataCreator</h3>
+            <p>hasMetadataCreator: has metadata creator</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasOwner" class="entry">
+            <h3>ObjectProperty: acdh:hasOwner</h3>
+            <p>hasOwner: has owner</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#owned">acdh:owned</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasPart" class="entry">
+            <h3>ObjectProperty: acdh:hasPart</h3>
+            <p>hasPart: has part</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isPartOf">acdh:isPartOf</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasPreserver" class="entry">
+            <h3>ObjectProperty: acdh:hasPreserver</h3>
+            <p>hasPreserver: has preserver</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#preserved">acdh:preserved</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasPrincipalInvestigator" class="entry">
+            <h3>ObjectProperty: acdh:hasPrincipalInvestigator</h3>
+            <p>hasPrincipalInvestigator: has principal investigator</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isPrincipalInvestigator">acdh:isPrincipalInvestigator</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasRelatedDiscipline" class="entry">
+            <h3>ObjectProperty: acdh:hasRelatedDiscipline</h3>
+            <p>hasRelatedDiscipline: has related discipline</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isRelatedDisciplineOf">acdh:isRelatedDisciplineOf</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasRelatedHardware" class="entry">
+            <h3>ObjectProperty: acdh:hasRelatedHardware</h3>
+            <p>hasRelatedHardware: has related hardware</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isRelatedHardware">acdh:isRelatedHardware</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasRelatedMethod" class="entry">
+            <h3>ObjectProperty: acdh:hasRelatedMethod</h3>
+            <p>hasRelatedMethod: has related method</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isRelatedMethod">acdh:isRelatedMethod</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasRelatedSoftware" class="entry">
+            <h3>ObjectProperty: acdh:hasRelatedSoftware</h3>
+            <p>hasRelatedSoftware: has related software</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isRelatedSoftware">acdh:isRelatedSoftware</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasRightsHolder" class="entry">
+            <h3>ObjectProperty: acdh:hasRightsHolder</h3>
+            <p>hasRightsHolder: has rights holder</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isRightsHolder">acdh:isRightsHolder</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasSchema" class="entry">
+            <h3>ObjectProperty: acdh:hasSchema</h3>
+            <p>hasSchema: has schema</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isSchemaOf">acdh:isSchemaOf</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasSource" class="entry">
+            <h3>ObjectProperty: acdh:hasSource</h3>
+            <p>hasSource: has source</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isSourceOf">acdh:isSourceOf</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasSpatialCoverage" class="entry">
+            <h3>ObjectProperty: acdh:hasSpatialCoverage</h3>
+            <p>hasSpatialCoverage: has spatial coverage</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#spatiallyCovered">acdh:spatiallyCovered</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasSubject" class="entry">
+            <h3>ObjectProperty: acdh:hasSubject</h3>
+            <p>hasSubject: has subject</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isSubjectOf">acdh:isSubjectOf</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasTemporalCoverage" class="entry">
+            <h3>ObjectProperty: acdh:hasTemporalCoverage</h3>
+            <p>hasTemporalCoverage: has temporal coverage</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#temporallyCovered">acdh:temporallyCovered</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasTitleImage" class="entry">
+            <h3>ObjectProperty: acdh:hasTitleImage</h3>
+            <p>hasTitleImage: has title image</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isTitleImageOf">acdh:isTitleImageOf</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasTransferMethod" class="entry">
+            <h3>ObjectProperty: acdh:hasTransferMethod</h3>
+            <p>hasTransferMethod: has transfer method</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">inverseOf</td>
+                  <td><a href="#isTransferMethod">acdh:isTransferMethod</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isActor" class="entry">
+            <h3>ObjectProperty: acdh:isActor</h3>
+            <p>isActor: is actor</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isContact" class="entry">
+            <h3>ObjectProperty: acdh:isContact</h3>
+            <p>isContact: is contact</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isDerivedPublication" class="entry">
+            <h3>ObjectProperty: acdh:isDerivedPublication</h3>
+            <p>isDerivedPublication: is derived publication</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isFormat" class="entry">
+            <h3>ObjectProperty: acdh:isFormat</h3>
+            <p>isFormat: is format</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isLicensor" class="entry">
+            <h3>ObjectProperty: acdh:isLicensor</h3>
+            <p>isLicensor: is licensor</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isLifeCycleStatusOf" class="entry">
+            <h3>ObjectProperty: acdh:isLifeCycleStatusOf</h3>
+            <p>isLifeCycleStatusOf: is lifecycle status of</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isLogo" class="entry">
+            <h3>ObjectProperty: acdh:isLogo</h3>
+            <p>isLogo: is logo</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isPartOf" class="entry">
+            <h3>ObjectProperty: acdh:isPartOf</h3>
+            <p>isPartOf: is part of</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isPrincipalInvestigator" class="entry">
+            <h3>ObjectProperty: acdh:isPrincipalInvestigator</h3>
+            <p>isPrincipalInvestigator: is principal investigator</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isRelatedDisciplineOf" class="entry">
+            <h3>ObjectProperty: acdh:isRelatedDisciplineOf</h3>
+            <p>isRelatedDisciplineOf: is related discipline of</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isRelatedHardware" class="entry">
+            <h3>ObjectProperty: acdh:isRelatedHardware</h3>
+            <p>isRelatedHardware: is related hardware</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isRelatedMethod" class="entry">
+            <h3>ObjectProperty: acdh:isRelatedMethod</h3>
+            <p>isRelatedMethod: is related method</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isRelatedSoftware" class="entry">
+            <h3>ObjectProperty: acdh:isRelatedSoftware</h3>
+            <p>isRelatedSoftware: is related software</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isRightsHolder" class="entry">
+            <h3>ObjectProperty: acdh:isRightsHolder</h3>
+            <p>isRightsHolder: is rights holder</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isSchemaOf" class="entry">
+            <h3>ObjectProperty: acdh:isSchemaOf</h3>
+            <p>isSchemaOf: is schema of</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isSourceOf" class="entry">
+            <h3>ObjectProperty: acdh:isSourceOf</h3>
+            <p>isSourceOf: is source of</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isSubjectOf" class="entry">
+            <h3>ObjectProperty: acdh:isSubjectOf</h3>
+            <p>isSubjectOf: is subject of</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isTitleImageOf" class="entry">
+            <h3>ObjectProperty: acdh:isTitleImageOf</h3>
+            <p>isTitleImageOf: is title image of</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="isTransferMethod" class="entry">
+            <h3>ObjectProperty: acdh:isTransferMethod</h3>
+            <p>isTransferMethod: is transfer method</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="licensed" class="entry">
+            <h3>ObjectProperty: acdh:licensed</h3>
+            <p>licensed: licensed</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="owned" class="entry">
+            <h3>ObjectProperty: acdh:owned</h3>
+            <p>owned: owned</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="preceded" class="entry">
+            <h3>ObjectProperty: acdh:preceded</h3>
+            <p>preceded: preceded</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="preserved" class="entry">
+            <h3>ObjectProperty: acdh:preserved</h3>
+            <p>preserved: preserved</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="relation" class="entry">
+            <h3>ObjectProperty: acdh:relation</h3>
+            <p>relation: relation</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="restrictedAccess" class="entry">
+            <h3>ObjectProperty: acdh:restrictedAccess</h3>
+            <p>restrictedAccess: restricted access</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="spatiallyCovered" class="entry">
+            <h3>ObjectProperty: acdh:spatiallyCovered</h3>
+            <p>spatiallyCovered: spatially covered</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="temporallyCovered" class="entry">
+            <h3>ObjectProperty: acdh:temporallyCovered</h3>
+            <p>temporallyCovered: temporally covered</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="version" class="entry">
+            <h3>ObjectProperty: acdh:version</h3>
+            <p>version: version</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl#topObjectProperty</a></td>
+               </tr>
+            </table>
+         </div>
+      </div>
+      <div>
+         <h2>DatatypeProperty</h2>
+         <div id="hasArrangement" class="entry">
+            <h3>DatatypeProperty: acdh:hasArrangement</h3>
+            <p>hasArrangement: has arrangement</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="#hasDescription">acdh:hasDescription</a></td>
+               </tr>
+               <tr>
+                  <td class="he">range</td>
+                  <td><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdf-schema#Literal</a></td>
+               </tr>
+            </table>
+            <p>The aim is to give a logical and coherent overall view of the whole set of objects.
+               Here the description of folder structure, nature of relationship between objects and
+               metadata, etc. are expected. (https://docs.google.com/spreadsheets/d/1rtaYrWRRkrcFnKghbVlS6rmCLfobx1Prs764MQjQ4BA/edit#gid=0)
+            </p>
+         </div>
+         <div id="hasCharacterEncoding" class="entry">
+            <h3>DatatypeProperty: acdh:hasCharacterEncoding</h3>
+            <p>hasCharacterEncoding: has character encoding</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topDataProperty">owl#topDataProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">range</td>
+                  <td><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdf-schema#Literal</a></td>
+               </tr>
+            </table>
+            <p>information about character encoding used and also information about nonstandard characters
+               and glyphs (https://docs.google.com/spreadsheets/d/1rtaYrWRRkrcFnKghbVlS6rmCLfobx1Prs764MQjQ4BA/edit#gid=0)
+            </p>
+         </div>
+         <div id="hasCompleteness" class="entry">
+            <h3>DatatypeProperty: acdh:hasCompleteness</h3>
+            <p>hasCompleteness: has completeness</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="#hasDescription">acdh:hasDescription</a></td>
+               </tr>
+               <tr>
+                  <td class="he">range</td>
+                  <td><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdf-schema#Literal</a></td>
+               </tr>
+            </table>
+            <p>how complete is the resource (https://docs.google.com/spreadsheets/d/1rtaYrWRRkrcFnKghbVlS6rmCLfobx1Prs764MQjQ4BA/edit#gid=0)</p>
+         </div>
+         <div id="hasCreationDate" class="entry">
+            <h3>DatatypeProperty: acdh:hasCreationDate</h3>
+            <p>hasCreationDate: has creation date</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="#hasDate">acdh:hasDate</a></td>
+               </tr>
+               <tr>
+                  <td class="he">range</td>
+                  <td><a href="http://www.w3.org/2001/XMLSchema#date">XMLSchema#date</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasDate" class="entry">
+            <h3>DatatypeProperty: acdh:hasDate</h3>
+            <p>hasDate: has date</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topDataProperty">owl#topDataProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">range</td>
+                  <td><a href="http://www.w3.org/2001/XMLSchema#date">XMLSchema#date</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasDescription" class="entry">
+            <h3>DatatypeProperty: acdh:hasDescription</h3>
+            <p>hasDescription: has description</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topDataProperty">owl#topDataProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">range</td>
+                  <td><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdf-schema#Literal</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasEditorialPractice" class="entry">
+            <h3>DatatypeProperty: acdh:hasEditorialPractice</h3>
+            <p>hasEditorialPractice: has editorial practice</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="#hasDescription">acdh:hasDescription</a></td>
+               </tr>
+               <tr>
+                  <td class="he">range</td>
+                  <td><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdf-schema#Literal</a></td>
+               </tr>
+            </table>
+            <p>details of editorial principles and practices applied during the encoding of a text
+               (https://docs.google.com/spreadsheets/d/1rtaYrWRRkrcFnKghbVlS6rmCLfobx1Prs764MQjQ4BA/edit#gid=0)
+            </p>
+         </div>
+         <div id="hasEndDate" class="entry">
+            <h3>DatatypeProperty: acdh:hasEndDate</h3>
+            <p>hasEndDate: has end date</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="#hasDate">acdh:hasDate</a></td>
+               </tr>
+               <tr>
+                  <td class="he">range</td>
+                  <td><a href="http://www.w3.org/2001/XMLSchema#date">XMLSchema#date</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasEndpoint" class="entry">
+            <h3>DatatypeProperty: acdh:hasEndpoint</h3>
+            <p>hasEndpoint: has endpoint</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topDataProperty">owl#topDataProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">range</td>
+                  <td><a href="http://www.w3.org/2001/XMLSchema#anyURI">XMLSchema#anyURI</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasIdentifier" class="entry">
+            <h3>DatatypeProperty: acdh:hasIdentifier</h3>
+            <p>hasIdentifier: has identifier</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topDataProperty">owl#topDataProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasLocationPath" class="entry">
+            <h3>DatatypeProperty: acdh:hasLocationPath</h3>
+            <p>hasLocationPath: has location path</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topDataProperty">owl#topDataProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasLocationUrl" class="entry">
+            <h3>DatatypeProperty: acdh:hasLocationUrl</h3>
+            <p>hasLocationUrl: has location URL</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topDataProperty">owl#topDataProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">range</td>
+                  <td><a href="http://www.w3.org/2001/XMLSchema#anyURI">XMLSchema#anyURI</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasNamingScheme" class="entry">
+            <h3>DatatypeProperty: acdh:hasNamingScheme</h3>
+            <p>hasNamingScheme: has naming scheme</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topDataProperty">owl#topDataProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">range</td>
+                  <td><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdf-schema#Literal</a></td>
+               </tr>
+            </table>
+            <p>conventions used for naming of files and folders, if any (https://docs.google.com/spreadsheets/d/1rtaYrWRRkrcFnKghbVlS6rmCLfobx1Prs764MQjQ4BA/edit#gid=0)</p>
+         </div>
+         <div id="hasNote" class="entry">
+            <h3>DatatypeProperty: acdh:hasNote</h3>
+            <p>hasNote: has note</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="#hasDescription">acdh:hasDescription</a></td>
+               </tr>
+               <tr>
+                  <td class="he">range</td>
+                  <td><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdf-schema#Literal</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasPid" class="entry">
+            <h3>DatatypeProperty: acdh:hasPid</h3>
+            <p>hasPid: has pid</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topDataProperty">owl#topDataProperty</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasStartDate" class="entry">
+            <h3>DatatypeProperty: acdh:hasStartDate</h3>
+            <p>hasStartDate: has start date</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="#hasDate">acdh:hasDate</a></td>
+               </tr>
+               <tr>
+                  <td class="he">range</td>
+                  <td><a href="http://www.w3.org/2001/XMLSchema#date">XMLSchema#date</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasSubmissionDate" class="entry">
+            <h3>DatatypeProperty: acdh:hasSubmissionDate</h3>
+            <p>hasSubmissionDate: has submission date</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="#hasDate">acdh:hasDate</a></td>
+               </tr>
+               <tr>
+                  <td class="he">range</td>
+                  <td><a href="http://www.w3.org/2001/XMLSchema#date">XMLSchema#date</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasTitle" class="entry">
+            <h3>DatatypeProperty: acdh:hasTitle</h3>
+            <p>hasTitle: has title</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topDataProperty">owl#topDataProperty</a></td>
+               </tr>
+               <tr>
+                  <td class="he">range</td>
+                  <td><a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdf-schema#Literal</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasTransferDate" class="entry">
+            <h3>DatatypeProperty: acdh:hasTransferDate</h3>
+            <p>hasTransferDate: has transfer date</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="#hasDate">acdh:hasDate</a></td>
+               </tr>
+               <tr>
+                  <td class="he">range</td>
+                  <td><a href="http://www.w3.org/2001/XMLSchema#date">XMLSchema#date</a></td>
+               </tr>
+            </table>
+         </div>
+         <div id="hasVersion" class="entry">
+            <h3>DatatypeProperty: acdh:hasVersion</h3>
+            <p>hasVersion: has version</p>
+            <table>
+               <tr>
+                  <td class="he">subPropertyOf</td>
+                  <td><a href="http://www.w3.org/2002/07/owl#topDataProperty">owl#topDataProperty</a></td>
+               </tr>
+            </table>
+         </div>
+      </div>
+   </body>
+</html>
