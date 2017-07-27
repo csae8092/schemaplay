@@ -11,10 +11,6 @@
    
    <xsl:template match="/">
       <html>
-         <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-            <title><xsl:value-of select="rdf:RDF/owl:Ontology/dct:title"/></title>
-         </head>
          <body>
             <h1><xsl:value-of select="rdf:RDF/owl:Ontology/dct:title"/></h1>
             <h2>OWL ontology</h2>
@@ -77,6 +73,18 @@
                      &#xa0;
                      <em><xsl:value-of select="rdfs:label" /></em></dt>
                   <dd><small><xsl:value-of select="rdfs:comment" /></small></dd>
+               </xsl:for-each>
+            </dl>
+            
+            <h3>Defined classes</h3>
+            <dl>
+               <xsl:for-each select="//owl:Class">
+                  <dt><code><xsl:value-of select="@rdf:about" /></code>
+                     &#xa0;
+                     <em><xsl:value-of select="rdfs:label" /></em></dt>
+                  
+                  <dd>subclass of <code><xsl:value-of select="rdfs:subClassOf/@rdf:resource"/></code></dd>
+                  <dd>equivalentClass <code><xsl:value-of select="owl:equivalentClass/@rdf:resource" /></code></dd>
                </xsl:for-each>
             </dl>
             
